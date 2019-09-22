@@ -62,7 +62,7 @@ def server_status(update, context):
         Replies to /server_status command.
     """
     print(f"Chat: {update.message.chat_id} requested server online.")
-    req = requests.get("https://api.mcsrvstat.us/2/orodruin.duckdns.org")
+    req = requests.get(f"https://api.mcsrvstat.us/2/{MINECRAFT_SERVER_IP}")
     response = req.json()
     if not response:
         context.bot.send_message(
