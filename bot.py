@@ -38,24 +38,18 @@ def players_online(update, context):
     req = requests.get(f"https://api.mcsrvstat.us/2/{MINECRAFT_SERVER_IP}")
     response = req.json()
     if not response:
-        context.bot.send_message(
-            chat_id=update.message.chat_id,
-            text="Se produjo un error al consultar con la API. Intenta más tarde.",
-            parse_mode=ParseMode.MARKDOWN)
+        message = "Se produjo un error al consultar con la API. Intenta más tarde."
     if response["players"]["online"] > 0:
         players_online = response["players"]["list"]
         message = "Jugadores online:\n"
         for index, player in enumerate(players_online, 1):
             message += f"{index}. *{player}*\n"
-        context.bot.send_message(
-            chat_id=update.message.chat_id,
-            text=message,
-            parse_mode=ParseMode.MARKDOWN)
     else:
-        context.bot.send_message(
-            chat_id=update.message.chat_id,
-            text="No hay jugadores conectados.")
-
+        message = "No hay jugadores conectados."
+    context.bot.send_message(
+        chat_id=update.message.chat_id,
+        text=message,
+        parse_mode=ParseMode.MARKDOWN)
 
 def server_status(update, context):
     """
@@ -65,20 +59,15 @@ def server_status(update, context):
     req = requests.get(f"https://api.mcsrvstat.us/2/{MINECRAFT_SERVER_IP}")
     response = req.json()
     if not response:
-        context.bot.send_message(
-            chat_id=update.message.chat_id,
-            text="Se produjo un error al consultar con la API. Intenta más tarde.",
-            parse_mode=ParseMode.MARKDOWN)
+        message = "Se produjo un error al consultar con la API. Intenta más tarde."
     if response["online"]:
-        context.bot.send_message(
-            chat_id=update.message.chat_id,
-            text="El servidor está *online*.",
-            parse_mode=ParseMode.MARKDOWN)
+        message = "El servidor está *online*."
     else:
-        context.bot.send_message(
-            chat_id=update.message.chat_id,
-            text="El servidor está *offline*.",
-            parse_mode=ParseMode.MARKDOWN)
+        message = "El servidor está *offline*."
+    context.bot.send_message(
+        chat_id=update.message.chat_id,
+        text=message,
+        parse_mode=ParseMode.MARKDOWN)    
 
 
 def callback_new_player(context: CallbackContext):
