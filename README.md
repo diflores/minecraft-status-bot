@@ -48,3 +48,12 @@ The bot checks every 60 seconds if there are new players online, if so, sends a 
 
 - Add a DBMS to store chat ids and list of online players.
 - Find a more elegant way to alert when new players are online.
+
+
+
+## Credits
+
+This bot wouldn't have been possible without the following resources:
+
+- https://api.mcsrvstat.us/
+- https://github.com/Dinnerbone/mcstatus
