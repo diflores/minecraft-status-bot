@@ -5,12 +5,18 @@ verify_ssl = true
 
 [dev-packages]
 flake8 = "*"
+black = "*"
 
 [packages]
 python-telegram-bot = "*"
 mcstatus = "*"
 requests = "*"
 python-dotenv = "*"
+flake8 = "*"
+black = "*"
 
 [requires]
 python_version = "3.7"
+
+[pipenv]
+allow_prereleases = true
