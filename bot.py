@@ -35,8 +35,9 @@ def players_online(update, context):
         Replies to /players_online command.
     """
     print(f"Chat: {update.message.chat_id} requested players online.")
-    req = requests.get(f"https://api.mcsrvstat.us/2/{MINECRAFT_SERVER_IP}")
+    req = requests.get(f"https://api.mcsrvstat.us/2/{MINECRAFT_SERVER_IP}:{MINECRAFT_SERVER_PORT}")
     response = req.json()
+    print(response)
     if not response:
         message = "Se produjo un error al consultar con la API. Intenta más tarde."
     if response["players"]["online"] > 0:
@@ -56,8 +57,9 @@ def server_status(update, context):
         Replies to /server_status command.
     """
     print(f"Chat: {update.message.chat_id} requested server online.")
-    req = requests.get(f"https://api.mcsrvstat.us/2/{MINECRAFT_SERVER_IP}")
+    req = requests.get(f"https://api.mcsrvstat.us/2/{MINECRAFT_SERVER_IP}:{MINECRAFT_SERVER_PORT}")
     response = req.json()
+    print(response)
     if not response:
         message = "Se produjo un error al consultar con la API. Intenta más tarde."
     if response["online"]:
