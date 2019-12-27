@@ -15,7 +15,7 @@ TELEGRAM_BOT_TOKEN=
 NEW_PLAYERS_CHAT_ID=
 ```
 
-The bot is intended to use with Pipenv, running the following commands:
+The bot is intended for using with Pipenv, running the following commands:
 
 ```
 $ pip install -U pipenv
@@ -31,7 +31,6 @@ $ pipenv run bot.py
 ```
 
 
-
 ## How to use
 
 Add your bot to a group and use the following commands:
@@ -40,6 +39,7 @@ Add your bot to a group and use the following commands:
 /start Starts the bot.
 /players_online Retrieves players currently online.
 /server_status Checks if server is online.
+/pucha Sends a Cries in Spanish GIF.
 ```
 
 The bot checks every 60 seconds if there are new players online, if so, sends a mesage to the chat with id `NEW_PLAYERS_CHAT_ID`, with a list of those new players. 
@@ -48,7 +48,6 @@ The bot checks every 60 seconds if there are new players online, if so, sends a 
 
 - Add a DBMS to store chat ids and list of online players.
 - Find a more elegant way to alert when new players are online.
-
 
 
 ## Credits
