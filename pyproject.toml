@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "minecraft-status-bot"
+version = "0.1.0"
+description = "Telegram bot that retrieves info about a given Minecraft server"
+authors = ["Daniela Flores <diflores@uc.cl>"]
+
+[tool.poetry.dependencies]
+python = "^3.7"
+
+[tool.poetry.dev-dependencies]
+python-telegram-bot = "*"
+mcstatus = "*"
+requests = "*"
+python-dotenv = "*"
+
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"
