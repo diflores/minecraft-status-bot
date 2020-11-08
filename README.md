@@ -15,19 +15,21 @@ TELEGRAM_BOT_TOKEN=
 NEW_PLAYERS_CHAT_ID=
 ```
 
-The bot is intended for using with Pipenv, by running the following commands:
+The bot is intended for using with Poetry, by running the following commands:
 
+1. Install Poetry:
+
+```sh
+curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python
 ```
-$ pip install -U pipenv
-$ pipenv install
-$ pipenv shell
-```
+
+2. Install requirements with: `poetry install`.
 
 ## How to run
 
 ```
-$ pipenv shell
-$ pipenv run bot.py
+$ poetry shell
+$ python bot.py
 ```
 
 
